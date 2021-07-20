@@ -1,0 +1,463 @@
+  
+  /*  coded by Bibek Shrestha */
+  :root{
+    --content-background:#d8cfb2;
+    --navigation-background: rgb(79, 89, 228);
+
+    --text-color-primary:#fff;
+    --text-color-content: rgb(223, 255, 249);
+    --link-color:#195faa;
+    --hover-bg:rgba(41, 47, 77, 0.466);
+
+
+  }
+ 
+ html {
+        scroll-behavior: smooth;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: var(--content-background);
+        font-size: 16px;
+        font-family: "Titillium Web", sans-serif;
+      }
+
+      a{
+          
+        font-weight: 600;
+        padding: 0.5rem;
+          text-decoration: none;
+          font-size: 1.2rem;
+          color: var(--text-color-primary);
+      }
+
+      .navigation {
+        position: fixed;
+        top: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 100%;
+        background: transparent;
+        padding: 0.2rem 1rem;
+        transition: 0.5s linear;
+       
+        z-index: 10;
+      
+
+       
+      }
+
+      .navigation .logo {
+        margin-left: 10px;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-color-primary);
+        width: 20%;
+        height: 100%;
+        padding: 5px;
+      }
+
+      .navigation .logo img{
+        width: 60px;
+      }
+      .navigation span{
+        width: 90%;
+        margin-left: 5px;
+        font-size: 1.25rem;
+      }
+
+      .pu_logo{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px;
+        text-transform: uppercase;
+      }
+
+      .logo_one{
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 20px;
+      }
+      .logo_one img{
+       
+        width: 45px;
+
+        
+      }
+
+      .logo_one span{
+        width: 100%;
+        margin-left: 5px;
+        white-space: nowrap;
+        font-size: 1.25rem;
+      }
+
+      .navigation .nav_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 70%;
+      }
+
+      .nav_container ul {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      .nav_container ul li {
+        list-style: none;
+      }
+      .nav_container a {
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 0.3rem 0.5rem;
+
+      }
+
+      /* the  active link indicator */
+      .active,
+      a:hover {
+        background: var(--hover-bg);
+        padding: 0.3rem, 0.5rem;
+        border-radius: 4px;
+      }
+
+      /* the class that shows upon scrolling */
+
+      .scroll {
+        background: var(--navigation-background);
+      }
+
+
+
+      /* nav_hider */
+
+      .hider{
+          top: -100px;
+      }
+
+      section {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        font-size: 50px;
+        color: var(--text-color-content);
+      }
+
+      
+      .main_content section:nth-child(odd){
+        background: linear-gradient(to right, #a59f74, #74967b);
+
+      }
+      .main_content section:nth-child(even){
+        background:  linear-gradient(to right, #134e5e, #71b280);
+        color: var(--text-color-primary);
+      }
+
+
+      .overflow_hidden{
+          overflow: hidden;
+      }
+
+
+
+      /* main-content goes here */
+      .main_content{
+        
+        z-index: 2;
+        transition: transform 0.2s;
+
+        
+      }
+
+
+      /* toTop */
+
+      .toTop{
+        position: fixed;
+        right: 3%;
+        bottom: 5%;
+        font-size: 2rem;
+        display: grid;
+        color: var(--text-color-primary);
+        background-color: var(--navigation-background);
+        line-height: 0.7;
+        padding: 0.1rem 0.5rem ;
+        border-radius: 4px;
+        box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.48);
+        transition: all .4s;
+        place-items: center;
+        opacity: 0;
+
+      }
+
+      .toTop.top_active{
+        cursor: pointer;
+        bottom: 32px;
+        opacity: 1;
+
+      }
+
+
+     
+
+     header{
+         position: fixed;
+         transform: translateX(-1000px);
+        
+     }
+
+
+     .menu_toggle{
+            
+            display: block;
+            float: left;
+            line-height: 1;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 5px;
+            overflow: hidden;
+    }
+
+    .menu_toggle:hover,.menu_toggle:focus{
+        background-color: rgba(255, 255, 255, 0.404);
+        overflow: hidden;
+    }
+     
+      /* responsive */
+
+    @media (max-width:1105px){
+
+          body{
+            font-size: 12px;
+
+        }
+
+          header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 50px;
+            width: 100%;
+            background:var(--navigation-background) ;
+            z-index: 3;
+           
+            color: #fff;
+
+            /* Force Hardware Acceleration in WebKit */
+            transform: translateZ(0);
+            transition: 0.2s linear;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .hiderTwo{
+            top: -50px;
+        }
+
+
+       
+        /* hide logo on small devices */
+
+        .navigation .logo {
+          display: none;
+        }
+
+
+        
+
+
+
+
+        
+
+    
+
+    
+
+        .navigation{
+            display: flex;
+            position: fixed;
+            flex-direction: column;
+            width: 260px;
+            right: 0;
+            height: 100vh;
+            background: var(--navigation-background);
+           visibility: hidden;
+            overflow-y: auto;
+             z-index: 1;
+             transform: translateX(260px);
+             transition: 0.2s linear;
+
+
+
+
+        }
+
+        .is_visible{
+            visibility: visible;
+            transition: 0.4s 1s;
+        }
+
+
+
+        .transformed{
+            transform: translateX(0px);
+            transition: transform .4s 0s, visibility .4s 0s;
+        }
+
+
+
+            .lateral-menu-is-open {
+            -webkit-transform: translateX(0);
+            -moz-transform: translateX(0);
+            -ms-transform: translateX(0);
+            -o-transform: translateX(0);
+            transform: translateX(-260px);
+            visibility: visible;
+            -webkit-transition: -webkit-transform .4s 0s, visibility 0s 0s;
+            -moz-transition: -moz-transform .4s 0s, visibility 0s 0s;
+            transition: transform .4s 0s, visibility 0s 0s;
+            /* smooth the scrolling on touch devices - webkit browsers */
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .main_content_transformed{
+            transform: translateX(-260px);
+             transition: transform .4s 0s, visibility .4s 0s;
+        }
+
+
+
+         .navigation .nav_container{
+
+             width: 100%;
+         }
+           .nav_container ul{
+            flex-direction: column;
+            min-height: 80vh;
+            width: 100%;
+
+            padding-bottom: 22px;
+
+         }
+
+
+         .nav_container ul li {
+             display: flex;
+             justify-content: center;
+             width: 100%;
+             margin-top: 10px;
+         }
+         .nav_container ul li a{
+           font-size: 1rem;
+             width: 100%;
+             padding: 20px;
+             line-height: 0.7;
+             color: var(--text-color-primary);
+         }
+
+          .active,
+      a:hover {
+        background: var(--hover-bg);
+        padding: 0.5rem;
+        border-radius: 4px;
+      }
+
+
+
+            #cd-menu-trigger {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 50px;
+        background-color: #0d11369d;
+        }
+        #cd-menu-trigger .cd-menu-text {
+        height: 100%;
+        text-transform: uppercase;
+        color: var(--text-color-primary);
+        font-weight: 600;
+        display: none;
+        }
+        #cd-menu-trigger .cd-menu-icon {
+        /* this span is the central line in the menu menu */
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        width: 18px;
+        height: 2px;
+        background-color: #FFF;
+        
+        /* these are the upper and lower lines in the menu menu */
+        }
+        #cd-menu-trigger .cd-menu-icon::before, #cd-menu-trigger .cd-menu-icon:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: inherit;
+        left: 0;
+        }
+        #cd-menu-trigger .cd-menu-icon::before {
+        bottom: 5px;
+        }
+        #cd-menu-trigger .cd-menu-icon::after {
+        top: 5px;
+        }
+        #cd-menu-trigger.is-clicked .cd-menu-icon {
+        background-color: rgba(255, 255, 255, 0);
+        }
+        #cd-menu-trigger.is-clicked .cd-menu-icon::before, #cd-menu-trigger.is-clicked .cd-menu-icon::after {
+        background-color: white;
+        }
+        #cd-menu-trigger.is-clicked .cd-menu-icon::before {
+        bottom: 0;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        transition: 0.2s;
+        color: #fff;
+        }
+        #cd-menu-trigger.is-clicked .cd-menu-icon::after {
+        top: 0;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        transition: 0.2s;
+        color: #fff;
+        }
+
+        
+    }
